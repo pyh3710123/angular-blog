@@ -1,0 +1,14 @@
+.blog-img{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 80px;
+  height: 100%;
+}
+.panel-heading{
+  position: relative;
+}
+.ico{
+  margin-left: 50px;
+  color: #ee651d;
+}

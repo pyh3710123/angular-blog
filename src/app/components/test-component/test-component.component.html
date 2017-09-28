@@ -1,0 +1,104 @@
+<app-user-item></app-user-item>
+<app-user-list-item></app-user-list-item>
+<app-weatherinfo></app-weatherinfo>
+<hr>
+<div class="container">
+  <form class="form-horizontal"
+        role="form"
+        enctype="multipart/form-data"
+        #profile="ngForm"
+        (ngSubmit)="doSubmit(profile.value)"
+        style="margin-top:50px;color:#e86c4a">
+    <div class="form-group">
+      <label class="col-sm-4 control-label"></label>
+    </div>
+    <div class="form-group">
+      <label for="fieldPhoto" class="col-sm-2 control-label">选择头像</label>
+      <div class="col-sm-4">
+        <input type="file"
+               class="form-control"
+               required
+               accept="image/*"
+               id="fieldPhoto"
+               name="photo"
+               ngModel
+        >
+        <input type="hidden"
+               name="phone"
+               ngModel
+        >
+      </div>
+      <div class=" col-sm-4">
+        <button type="submit"
+                class="btn btn-primary" style="background:#e86c4a;border: none">保存头像
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+<li>把小写转化为大写：{{lowercaseValue | uppercase}}</li> <!--内置过滤器-->
+<li>CurrencyPipe：{{ currencyValue | currency: 'USD' }}</li>
+<li>DatePipe - {{ dateValue | date: 'shortTime'  }}</li>
+<li>DecimalPipe - {{ decimalValue | number: '3.1-2' }}</li>
+<li>JsonPipe - {{ jsObject | json }}</li>
+<li>LowerCasePipe - {{ uppercaseValue | lowercase }}</li>
+<li>UpperCaseFilter - {{ lowercaseValue | uppercase }}</li>
+<li>PercentPipe - {{ percentValue | percent: '2.1-2' }}</li>
+<li>SlicePipe - {{ array | slice: 1: 2 }}</li>
+
+<div>
+  <!-- // 截取第0个字符到第6个字符，即前四个字符 -->
+  <p>{{sliceString}}[0:6]: '{{sliceString | slice:0:6}}'</p>　
+
+  <!--// 截取字符串最后6个字符 -->          　　　　
+  <p>{{sliceString}}[-6]: '{{sliceString | slice:-6}}'</p>　
+
+  <!--//从字符串倒数第6个字符开始截取，直至倒数第二个字符 -->          　　　　
+  <p>{{sliceString}}[-6:-2]: '{{sliceString | slice:-6:-2}}...'</p>　　　
+</div>
+
+<p style="color: red">{{ today | date:'yyyy' }}-{{ today |date:'MM' }}-{{ today | date:'d' }} {{today|date:'HH'}}:{{ today | date:'mm' }}:{{ today | date:'ss' }}</p>
+
+<p>{{ today | date:"y年MM月dd日HH时mm分ss秒"}}</p>
+<pre>{{jsObject|json}}</pre> <!--pre标签  预先格式化-->
+<p>A: {{334.90 | currency:'CNY':true}}</p>
+<p>B: {{546346.89 | currency:'USD':true:'4.2-2'}}</p>
+<div>
+
+  <p>p_pi (no formatting): {{p_pi}} </p>
+  <p>p_pi (1.2-2): {{p_pi | percent:'1.2-2'}} </p>　　　
+</div>
+<p>{{popular|boolean:['YES']:['NO']}}</p>
+<p>{{popular|boolean:[':+1:']:['NO']}}</p>
+<div>
+  <input type="radio" name="colors" (click)="color='lightgreen'">Green
+  <input type="radio" name="colors" (click)="color='yellow'">Yellow
+  <input type="radio" name="colors" (click)="color='cyan'">Cyan
+</div>
+
+<p [appRedback]="color">哈哈哈哈</p>
+<hr/>
+<h1>自定义结构指令</h1>
+<p>
+  当前条件
+
+  <span [ngClass]="{ a: !condition, b: condition, unless: true }">{{condition}}</span>.
+  <button
+    (click)="condition = !condition"
+    [ngClass] = "{ a: condition, b: !condition }" >
+    改变条件 {{condition ? 'false' : 'true'}}
+  </button>
+</p>
+
+<p *appStrucDirective="condition" class="unless a">
+  (A) 这段的条件是 false.
+</p>
+
+<p *appStrucDirective="!condition" class="unless b">
+  (B) 这段的条件是 true,
+  因unless被设为 false.
+</p>
+
+
+
+<app-inventory></app-inventory>

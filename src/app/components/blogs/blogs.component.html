@@ -1,0 +1,53 @@
+<!--
+<h1 style="margin-top: 200px" class="container">Blogs</h1>
+<ul>
+
+
+  <li *ngFor="let blog of blogs">
+    <a [routerLink]="['/blogdetail', blog._id]">
+      {{blog.title}}
+    </a>
+  </li>
+
+</ul>
+-->
+
+<div class="container panel panel-default" style="margin-top: 100px" *ngFor="let blog of blogs">
+  <div class="panel-body">
+      {{blog.title}}
+       <p>{{blog.createdAt}}</p>
+  </div>
+  <hr>
+  <div class="panel-body">
+    {{blog.content}}
+  </div>
+</div>
+
+<!--
+<div class="container" style="margin-top: 200px;">
+    <div class="panel-group" role="tablist" aria-multiselectable="true">
+      <div class="col-sm-8 panel panel-default"  *ngFor="let blog of blogs">
+        <div class="panel-heading" role="tab">
+          <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              标题:{{blog.title}}
+            </a>
+          </h4>
+          <p class="blog-auth">作者：{{blog.username}}</p>
+          <span class="blog-time">发布于{{blog.createdAt}}</span>
+          <span class="ico">喜欢</span>
+          <span class="ico">讨厌</span>
+          <span class="ico">评论</span>
+          <img class="blog-img" src='http://localhost:3009/{{blog.authorPicture}}' alt="">
+        </div>
+        <div  class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+              {{blog.content}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+-->
+

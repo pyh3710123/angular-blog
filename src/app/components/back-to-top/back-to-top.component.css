@@ -1,0 +1,19 @@
+#toTop{
+  width: 60px;
+  height: 60px;
+  background: #ff7008;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  transition: .5s;
+}
+#toTop:hover{
+  background: #ffb502;
+}
+#toTop i{
+  font-size: 30px;
+  line-height: 60px;
+  margin-left: 15px;
+  color: white;
+}
+

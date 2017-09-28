@@ -1,0 +1,10 @@
+
+<ul class="container">
+ <!-- <li *ngFor="let userItem of names">
+    你好 {{userItem}}</li>-->
+   <app-user-item *ngFor="let userItem of names" [name]='userItem'>
+
+  </app-user-item>
+
+</ul>
+

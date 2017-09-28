@@ -1,0 +1,23 @@
+#ul>li{
+  list-style: none;
+  float: left;
+
+}
+#ul>li>img{
+  width:140px;
+  height: 140px;
+
+}
+.zhekou{
+  color: #ff5f0b;
+  text-decoration:line-through
+
+}
+.dazhe{
+  color: red;
+  font-size: 30px;
+}
+#shopTitle>p{
+  float: right;
+  margin: 30px;
+}

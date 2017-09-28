@@ -1,0 +1,95 @@
+
+
+
+<h1 class="container">购物商城</h1>
+<div class="container" id="shopTitle">
+  <p class="btn btn-warning " (click)="nextChoice(1)">
+    鞋子
+  </p>
+  <p class="btn btn-warning " (click)="nextChoice(2)">
+    汽车
+  </p>
+  <p class="btn btn-warning " (click)="nextChoice(3)">
+    服装
+  </p>
+</div>
+  <ul [ngSwitch]="choice" style="list-style:none">
+    <li *ngSwitchCase="1">
+      <div class="bs-example" data-example-id="thumbnails-with-custom-content">
+        <div class="container row">
+          <ul id="itemContainer">
+            <div class="col-sm-6 col-md-4" *ngFor="let i of shoes">
+              <div class="thumbnail">
+                <img src="{{i.imgSrc}}" alt="" style="width: 242px;height: 200px">
+                <div class="caption">
+                  <h3 [ngClass]="{zhekou:i.isDiscount}">原价￥:{{i. price}}</h3>
+                  <p>{{i.des}}</p>
+                  <span>是否包邮：</span>
+                  <p *ngIf="i.freepost" style="float: right">是</p>
+                  <p *ngIf="!(i.freepost)" style="float: right">否</p>
+                  <p *ngIf="i.isDiscount" [ngClass]="{dazhe:i.isDiscount}">折扣价:{{i.discount}}</p>
+                  <p *ngIf="!(i.isDiscount)" [ngStyle]="{color:'red',fontSize:'30px'}">折扣价:无</p>
+                </div>
+                <a href="#" class="btn btn-primary" role="button">购买</a> <a href="#" class="btn btn-default" role="button">详细情况</a>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <div class="holder" style="float: right"></div>
+    </li>
+    <li *ngSwitchCase="2">
+      <div class="bs-example" data-example-id="thumbnails-with-custom-content">
+        <div class="container row">
+          <ul id="itemContainer">
+            <div class="col-sm-6 col-md-4" *ngFor="let i of cars">
+              <div class="thumbnail">
+                <img src="{{i.imgSrc}}" alt="" style="width: 242px;height: 200px">
+                <div class="caption">
+                  <h3 [ngClass]="{zhekou:i.isDiscount}">原价￥:{{i. price}}</h3>
+                  <p>{{i.des}}</p>
+                  <span>是否包邮：</span>
+                  <p *ngIf="i.freepost" style="float: right">是</p>
+                  <p *ngIf="!(i.freepost)" style="float: right">否</p>
+                  <p *ngIf="i.isDiscount" [ngClass]="{dazhe:i.isDiscount}">折扣价:{{i.discount}}</p>
+                  <p *ngIf="!(i.isDiscount)" [ngStyle]="{color:'red',fontSize:'30px'}">折扣价:无</p>
+                </div>
+                <a href="#" class="btn btn-primary" role="button">购买</a> <a href="#" class="btn btn-default" role="button">详细情况</a>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <div class="holder" style="float: right"></div>
+    </li>
+    <li *ngSwitchCase="3">
+      <div class="bs-example" data-example-id="thumbnails-with-custom-content">
+        <div class="container row">
+          <ul id="itemContainer">
+            <div class="col-sm-6 col-md-4" *ngFor="let i of clothes">
+              <div class="thumbnail">
+                <img src="{{i.imgSrc}}" alt="" style="width: 242px;height: 200px">
+                <div class="caption">
+                  <h3 [ngClass]="{zhekou:i.isDiscount}">原价￥:{{i. price}}</h3>
+                  <p>{{i.des}}</p>
+                  <span>是否包邮：</span>
+                  <p *ngIf="i.freepost" style="float: right">是</p>
+                  <p *ngIf="!(i.freepost)" style="float: right">否</p>
+                  <p *ngIf="i.isDiscount" [ngClass]="{dazhe:i.isDiscount}">折扣价:{{i.discount}}</p>
+                  <p *ngIf="!(i.isDiscount)" [ngStyle]="{color:'red',fontSize:'30px'}">折扣价:无</p>
+                </div>
+                <a href="#" class="btn btn-primary" role="button">购买</a> <a href="#" class="btn btn-default" role="button">详细情况</a>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <div class="holder" style="float: right"></div>
+    </li>
+    <li *ngSwitchDefault>Default choice</li>
+  </ul>
+
+
+
+
+
